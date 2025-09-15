@@ -9,15 +9,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
 </head>
-<body>
+<body class="bg-neutral-very-pale-blue">
 <div class="header relative flex justify-center items-center h-75">
     <div class="header-container text-center">
-        <h1 class="header-title text-xl font-800 pb-2">Simple, traffic-based pricing</h1>
-        <p class="header-first-text font-600">Sing-up for our 30-day trial.</p>
-        <p class="header-second-text font-600">No credit card required.</p>
+        <h1 class="header-title text-2xl font-600 pb-2">Simple, traffic-based pricing</h1>
+        <p class="header-first-text font-600 text-neutral-grayish-blue">Sing-up for our 30-day trial.</p>
+        <p class="header-second-text font-600 text-neutral-grayish-blue">No credit card required.</p>
     </div>
     <div class="header-bg-pattern absolute bg-[url('/public/bg-pattern.svg')] -top-40 inset-0 bg-no-repeat  -z-1"></div>
     <div class="header-circles absolute bg-[url('/public/pattern-circles.svg')] bg-center inset-0 bg-no-repeat -z-1"></div>
+</div>
+<div class="main">
+    <div class="main-container bg-neutral-white text-center rounded-xl py-8 mx-4">
+        <div class="main-slider space-y-8">
+            <h2 class="main-title text-md text-neutral-grayish-blue font-600 uppercase">100k Pageviews</h2>
+            <input type="range" class="w-72 bg-primary-soft-cyan appearance-none rounded-lg cursor-pointer accent-primary-strong-cyan" id="main-price-slider" name="main-price-slider" min="0" max="100" value="50">
+
+            <div class="main-slider-info flex justify-center items-center space-x-1">
+                <p class="main-price-month main-price text-4xl font-bold">$16.00</p>
+                <p class="main-month text-neutral-grayish-blue font-medium"> / month</p>
+            </div>
+            <div class="main-additional-information flex justify-center space-x-4">
+                <div class="main-monthly-billing-container flex space-x-2">
+                    <p class="main-monthly-billing text-neutral-grayish-blue">Monthly Billing</p>
+                    <label class="main-switch-label relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="main-switch w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-primary-strong-cyan
+                                after:content-[''] after:absolute after:top-[4px] after:left-[6px]
+                                after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all
+                                peer-checked:after:translate-x-full">
+                        </div>
+                    </label>
+                </div>
+                <div class="main-yearly-billing-container flex space-x-2">
+                    <p class="main-yearly-billing text-neutral-grayish-blue">Yearly Billing</p>
+                    <p class="main-per-cent w-14 rounded-xl font-600 bg-primary-light-grayish-red text-primary-light-red">-25%</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-list"></div>
+        <button></button>
+    </div>
 </div>
 </body>
 </html>

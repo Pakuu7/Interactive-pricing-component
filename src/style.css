@@ -1,23 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary-soft-cyan: hsl(174, 77%, 80%);
-    --color-primary-strong-cyan: hsl(174, 86%, 45%);
-    --color-primary-light-grayish-red: hsl(14, 92%, 95%);
-    --color-primary-light-red: hsl(15, 100%, 70%);
-    --color-primary-pale-blue: hsl(226, 100%, 87%);
+    /* === Primary Colors === */
+    --color-primary-soft-cyan: hsl(174, 77%, 80%); /* Soft Cyan – full slider bar */
+    --color-primary-strong-cyan: hsl(174, 86%, 45%); /* Strong Cyan – slider background */
+    --color-primary-light-grayish-red: hsl(14, 92%, 95%); /* Light Grayish Red – discount background */
+    --color-primary-light-red: hsl(15, 100%, 70%); /* Light Red – discount text */
+    --color-primary-pale-blue: hsl(226, 100%, 87%); /* Pale Blue – CTA text */
 
-    --color-neutral-white: hsl(0, 0%, 100%);
-    --color-neutral-very-pale-blue: hsl(230, 100%, 99%);
-    --color-neutral-light-grayish-blue1: hsl(224, 65%, 95%);
-    --color-neutral-light-grayish-blue2: hsl(223, 50%, 87%);
-    --color-neutral-grayish-blue: hsl(225, 20%, 60%);
-    --color-neutral-dark-desaturated-blue: hsl(227, 35%, 25%);
+    /* === Neutral Colors === */
+    --color-neutral-white: hsl(0, 0%, 100%); /* White – pricing component background */
+    --color-neutral-very-pale-blue: hsl(230, 100%, 99%); /* Very Pale Blue – main background */
+    --color-neutral-light-grayish-blue1: hsl(224, 65%, 95%); /* Light Grayish Blue – empty slider bar */
+    --color-neutral-light-grayish-blue2: hsl(223, 50%, 87%); /* Light Grayish Blue – toggle background */
+    --color-neutral-grayish-blue: hsl(225, 20%, 60%); /* Grayish Blue – text */
+    --color-neutral-dark-desaturated-blue: hsl(227, 35%, 25%); /* Dark Desaturated Blue – text & CTA background */
 
+    /* === Typography === */
     --font-manrope: "Manrope", sans-serif;
-
     --text-intro: 15px;
 
+    /* === Font Weights === */
     --font-weight-600: 600;
     --font-weight-800: 800;
+}
+
+input[type="range"] {
+    height: 8px;
+    background: hsl(174, 77%, 80%);
+    border-radius: 9999px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: hsl(174, 86%, 45%) url('/public/icon-slider.svg') center no-repeat;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.6);
+    cursor: pointer;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: hsl(174, 86%, 45%) url('/public/icon-slider.svg') center no-repeat;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.6);
+    cursor: pointer;
+    border: none;
 }
