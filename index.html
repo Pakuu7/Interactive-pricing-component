@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
 </head>
-<body class="bg-neutral-very-pale-blue">
+<body class="relative bg-neutral-very-pale-blue">
 <div class="header relative flex justify-center items-center h-75">
     <div class="header-container text-center">
         <h1 class="header-title text-2xl font-600 pb-2">Simple, traffic-based pricing</h1>
@@ -19,8 +19,8 @@
     <div class="header-bg-pattern absolute bg-[url('/public/bg-pattern.svg')] -top-40 inset-0 bg-no-repeat  -z-1"></div>
     <div class="header-circles absolute bg-[url('/public/pattern-circles.svg')] bg-center inset-0 bg-no-repeat -z-1"></div>
 </div>
-<div class="main">
-    <div class="main-container bg-neutral-white text-center rounded-xl py-8 mx-4">
+<div class="main absolute w-82 top-65 left-1/2 -translate-x-1/2">
+    <div class="main-container bg-neutral-white text-center rounded-xl py-10">
         <div class="main-slider space-y-8">
             <h2 class="main-title text-md text-neutral-grayish-blue font-600 uppercase">100k Pageviews</h2>
             <input type="range" class="w-72 bg-primary-soft-cyan appearance-none rounded-lg cursor-pointer accent-primary-strong-cyan" id="main-price-slider" name="main-price-slider" min="0" max="100" value="50">
