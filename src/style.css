@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+    font-family: "Manrope", sans-serif;
+}
+
 @theme {
     /* === Primary Colors === */
     --color-primary-soft-cyan: hsl(174, 77%, 80%); /* Soft Cyan – full slider bar */
@@ -15,10 +19,6 @@
     --color-neutral-light-grayish-blue2: hsl(223, 50%, 87%); /* Light Grayish Blue – toggle background */
     --color-neutral-grayish-blue: hsl(225, 20%, 60%); /* Grayish Blue – text */
     --color-neutral-dark-desaturated-blue: hsl(227, 35%, 25%); /* Dark Desaturated Blue – text & CTA background */
-
-    /* === Typography === */
-    --font-manrope: "Manrope", sans-serif;
-    --text-intro: 15px;
 
     /* === Font Weights === */
     --font-weight-600: 600;
