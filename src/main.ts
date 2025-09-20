@@ -33,5 +33,6 @@ function updatePricing(): void {
 slider?.addEventListener('input', updatePricing);
 switchBilling?.addEventListener('change', updatePricing);
 
+updatePricing();
 
 
