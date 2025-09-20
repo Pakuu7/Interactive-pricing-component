@@ -1,13 +1,13 @@
 const titleViews = document.querySelector('.main-title-views') as HTMLSpanElement;
-const titleViewsSuffix = document.querySelector('.main-title-suffix') as HTMLSpanElement;
 const priceMonth = document.querySelector('.main-price') as HTMLSpanElement;
 const slider = document.querySelector('.main-slider') as HTMLInputElement;
+const switchBilling = document.querySelector('.main-switch-input') as HTMLInputElement;
 
 interface Pricing {
     titleViews: number;
     titleViewsSuffix: 'k' | 'm';
     priceMonth: number;
-};
+}
 
 const pricingPlans: Pricing[] = [
     { titleViews: 10, titleViewsSuffix: 'k', priceMonth: 8},
@@ -17,13 +17,21 @@ const pricingPlans: Pricing[] = [
     { titleViews: 1, titleViewsSuffix: 'm', priceMonth: 36},
 ];
 
-slider?.addEventListener('input', event => {
-    const sliderElement = event.target as HTMLInputElement;
-    let sliderLevel :number = Number(sliderElement.value);
+function updatePricing(): void {
+    const sliderLevel = Number(slider.value);
     const plan = pricingPlans[sliderLevel];
-    titleViews.innerText = plan.titleViews + plan.titleViewsSuffix
-    priceMonth.innerText = String(plan.priceMonth.toFixed(2));
 
-});
+    titleViews.innerText = plan.titleViews + plan.titleViewsSuffix;
+
+    if (switchBilling.checked) {
+        priceMonth.innerText = (plan.priceMonth * 0.75).toFixed(2);
+    } else {
+        priceMonth.innerText = plan.priceMonth.toFixed(2);
+    }
+}
+
+slider?.addEventListener('input', updatePricing);
+switchBilling?.addEventListener('change', updatePricing);
+
 
 
