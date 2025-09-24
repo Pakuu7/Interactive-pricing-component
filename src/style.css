@@ -23,6 +23,8 @@
     /* === Font Weights === */
     --font-weight-600: 600;
     --font-weight-800: 800;
+
+    --breakpoint-xl: 1440px;
 }
 
 input[type="range"] {
