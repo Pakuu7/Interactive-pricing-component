@@ -1,4 +1,4 @@
-const titleViews = document.querySelector('.main-title-views') as HTMLSpanElement;
+const titleViews = document.querySelectorAll<HTMLSpanElement>('.main-title-views');
 const priceMonth = document.querySelector('.main-price') as HTMLSpanElement;
 const slider = document.querySelector('.main-slider') as HTMLInputElement;
 const switchBilling = document.querySelector('.main-switch-input') as HTMLInputElement;
@@ -21,7 +21,9 @@ function updatePricing(): void {
     const sliderLevel = Number(slider.value);
     const plan = pricingPlans[sliderLevel];
 
-    titleViews.innerText = plan.titleViews + plan.titleViewsSuffix;
+    titleViews.forEach(title => {
+        title.innerText = plan.titleViews + plan.titleViewsSuffix;
+    })
 
     if (switchBilling.checked) {
         priceMonth.innerText = (plan.priceMonth * 0.75).toFixed(2);
@@ -30,9 +32,22 @@ function updatePricing(): void {
     }
 }
 
+function updateSlider(): void {
+    const value = Number(slider.value);
+    const min = Number(slider.min);
+    const max = Number(slider.max);
+    const percent = ((value - min) / (max - min)) * 100;
+
+    slider.style.background = `linear-gradient(to right,
+        hsl(174, 77%, 80%) ${percent}%,
+        hsl(224, 65%, 95%) ${percent}%)`;
+}
+
 slider?.addEventListener('input', updatePricing);
 switchBilling?.addEventListener('change', updatePricing);
+slider?.addEventListener('input', updateSlider);
 
 updatePricing();
+updateSlider();
 
 
